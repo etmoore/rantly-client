@@ -11,5 +11,9 @@ export default Ember.ArrayController.extend({
       this.set('title', null);
       this.set('body', null);
     },
+
+    deleteRant: function(rant) {
+      this.store.deleteRecord(rant);
+    },
   }
 });
