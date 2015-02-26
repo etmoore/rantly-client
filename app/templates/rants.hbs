@@ -1,5 +1,10 @@
 <h1>Rants</h1>
 
+<h2>Create a new rant!</h2>
+{{input value=title}}
+{{input value=body}}
+<button {{action 'createRant'}} class="btn-submit">Submit</button>
+
 {{#each}}
   <h2>
     {{title}}
