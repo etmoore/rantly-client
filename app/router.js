@@ -6,6 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('rants', { path: '/' });
+  this.route('users');
+  this.route('signup');
 });
 
 export default Router;
