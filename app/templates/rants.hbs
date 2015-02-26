@@ -3,6 +3,9 @@
 <h2>Create a new rant!</h2>
 {{input value=title}}
 {{input value=body}}
+<p>
+  Count: {{charCount}}
+</p>
 <button {{action 'createRant'}} class="btn-submit">Submit</button>
 
 {{#each}}
