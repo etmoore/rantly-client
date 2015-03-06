@@ -8,14 +8,28 @@
 </p>
 <button {{action 'createRant'}} class="btn-submit">Submit</button>
 
-{{#each}}
-  <h2>
-    {{title}}
-  </h2>
-  <p>
-    {{body}}
-  </p>
-  <button {{action 'deleteRant' this}} class="btn-delete">Delete</button>
+{{#each rant in model itemController="rant"}}
+  {{#if rant.isEditing}}
+    <h2>
+      {{input value=rant.title}}
+      {{rant.title}}
+    </h2>
+    <p>
+      {{input value=rant.body}}
+      {{rant.body}}
+    </p>
+    <button {{action 'deleteRant' rant}} class="btn-delete">Delete</button>
+    <button {{action 'saveRant' rant}} class="btn-edit">Save</button>
+  {{else}}
+    <h2>
+      {{rant.title}}
+    </h2>
+    <p>
+      {{rant.body}}
+    </p>
+    <button {{action 'deleteRant' rant}} class="btn-delete">Delete</button>
+    <button {{action 'editRant' rant}} class="btn-edit">Edit</button>
+  {{/if}}
 {{/each}}
 
 {{outlet}}

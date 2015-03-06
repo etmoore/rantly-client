@@ -1,11 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
+
   title: '',
   body: '',
   charCount: function(){
     return this.get('body').length;
   }.property('body'),
+
   actions: {
     createRant: function() {
       var title = this.get('title');
@@ -15,10 +17,6 @@ export default Ember.ArrayController.extend({
 
       this.set('title', '');
       this.set('body', '');
-    },
-
-    deleteRant: function(rant) {
-      this.store.deleteRecord(rant);
     },
   }
 });
