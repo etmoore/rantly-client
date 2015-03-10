@@ -1,11 +1,14 @@
 <h1>Rants</h1>
 
 <h2>Create a new rant!</h2>
+
 {{input value=title}}
+<p>{{title}}</p>
+
 {{input value=body}}
-<p>
-  Count: {{charCount}}
-</p>
+<p>{{body}}</p> 
+
+<p> Count: {{charCount}} </p>
 <button {{action 'createRant'}} class="btn-submit">Submit</button>
 
 {{#each rant in model itemController="rant"}}
